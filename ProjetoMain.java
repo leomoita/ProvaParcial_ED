@@ -6,16 +6,12 @@ public class ProjetoMain {
 
 	public static void main(String[] args) {
 
-		//criação das variáveis
 		Scanner scan = new Scanner(System.in);
 
-		//criar vetor com 20 de capacidade
 		ArrayList<Contato> lista = new ArrayList<Contato>(20);
 
-		//criar e adicionar X contatos
 		criarContatosDinamicamente(5, lista);
 
-		//criar um menu para que o usuário escolha a opção
 		int opcao = 1;
 
 		while (opcao != 0){
@@ -36,25 +32,25 @@ public class ProjetoMain {
 				obtemContato(scan, lista);
 				break;
 			case 5: 
-				pesquisarPrimeiroIndice(scan, lista); //tarefa 3
+				pesquisarPrimeiroIndice(scan, lista); 
 				break;
             case 6: 
-				pesquisarUltimoIndice(scan, lista); //tarefa 4
+				pesquisarUltimoIndice(scan, lista);
 				break;
 			case 7: 
 				pesquisarContatoExiste(scan, lista);
 				break;	
 			case 8: 
-				excluirPorPosicao(scan, lista); //tarefa 1
+				excluirPorPosicao(scan, lista); 
 				break;	
 			case 9: 
-				excluirContato(scan, lista); //tarefa 1
+				excluirContato(scan, lista); 
 				break;	
 			case 10:
 				imprimeTamanhoVetor(lista);
 				break;
 			case 11:
-				limparVetor(lista); //tarefa 2
+				limparVetor(lista); 
 				break;
 			case 12:
 				imprimirVetor(lista);

@@ -6,7 +6,7 @@ public class Lista<T> {
 	private int tamanho;
 
 	public Lista(int capacidade){
-		this.elementos = (T[]) new Object[capacidade]; //solução do livro effective Java
+		this.elementos = (T[]) new Object[capacidade];
 		this.tamanho = 0;
 	}
 	
@@ -29,9 +29,6 @@ public class Lista<T> {
 		return false;
 	}
 	
-	// 0 1 2 3 4 5 6 = tamanho é 5
-	// B C E F G + +
-	//
 	public boolean adiciona(int posicao, T elemento){
 		
 		if (!(posicao >= 0 && posicao < tamanho)){
@@ -40,7 +37,6 @@ public class Lista<T> {
 		
 		this.aumentaCapacidade();
 		
-		//mover todos os elementos
 		for (int i=this.tamanho-1; i>=posicao; i--){
 			this.elementos[i+1] = this.elementos[i];
 		}
@@ -90,23 +86,10 @@ public class Lista<T> {
 		return -1;
 	}
 	
-	public boolean contem(T elemento){
-		
-		/*int pos = busca(elemento);
-		if (pos > -1){
-			return true;
-		}
-		
-		return false;*/
-		
-		return busca(elemento) > -1; //>=0
+	public boolean contem(T elemento){		
+		return busca(elemento) > -1; 
 	}
 	
-	// B D E F F -> posição a ser removida é 1 (G)
-	// 0 1 2 3 4 -> tamanho é 5
-	// vetor[1] = vetor[2]
-	// vetor[2] = vetor[3]
-	// vetor[3] = vetor[4]
 	public void remove(int posicao){
 		if (!(posicao >= 0 && posicao < tamanho)){
 			throw new IllegalArgumentException("Posição inválida");
@@ -125,13 +108,6 @@ public class Lista<T> {
 	}
 	
 	public void limpar(){
-		//opção 1
-		//this.elementos = (T[]) new Object[this.elementos.length];
-		
-		//opção 2
-		//this.tamanho = 0;
-		
-		//opção 3
 		for (int i=0; i<this.tamanho; i++){
 			this.elementos[i] = null;
 		}
